@@ -33,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         WebView myWebView = (WebView) findViewById(R.id.web_view);
-        Object url = com.lispworks.LispCalls.callObjectV("get-url-to-display");
+
+        com.lispworks.Manager.init(this);
+        Object url = com.lispworks.LispCalls.callObjectV("GET-URL-TO-DISPLAY");
         myWebView.loadUrl((String) url);
     }
 
