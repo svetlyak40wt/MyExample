@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         WebView myWebView = (WebView) findViewById(R.id.web_view);
-        myWebView.loadUrl("https://svetlyak.ru");
+        Object url = com.lispworks.LispCalls.callObjectV("get-url-to-display");
+        myWebView.loadUrl((String) url);
     }
 
     @Override
