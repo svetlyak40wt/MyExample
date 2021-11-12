@@ -8,13 +8,16 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.View;
 
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    Integer initialized = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +35,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        WebView myWebView = (WebView) findViewById(R.id.web_view);
+        tryInit();
 
-        com.lispworks.Manager.init(this);
-        Object url = com.lispworks.LispCalls.callObjectV("GET-URL-TO-DISPLAY");
-        myWebView.loadUrl((String) url);
+        if (initialized == 0) {
+            String msg = (
+                    "Failed to initialize LispWorks("
+                            + com.lispworks.Manager.init_result_code() + ") : "
+                            + com.lispworks.Manager.mInitErrorString
+            );
+            Log.d("app", msg);
+            TextView errorText = (TextView) findViewById(R.id.error_text);
+            errorText.setText(msg);
+        } else {
+            Object url = com.lispworks.LispCalls.callObjectV("GET-URL-TO-DISPLAY");
+            WebView myWebView = (WebView) findViewById(R.id.web_view);
+            myWebView.loadUrl((String) url);
+        }
     }
 
     @Override
@@ -59,5 +73,22 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void tryInit (){
+        int lwStatus = com.lispworks.Manager.status ()  ;
+        switch (lwStatus) {
+            case com.lispworks.Manager.STATUS_READY : initialized = 1; break;
+            case com.lispworks.Manager.STATUS_ERROR : initialized = 0; break ;
+            case com.lispworks.Manager.STATUS_INITIALIZING :
+            case  com.lispworks.Manager.STATUS_NOT_INITIALIZED :
+                // Initialize with a runnable that will get called when LispWorks
+                // finished to initialize (or got an error) and will run this method again
+                // to update "initialized" attribute.
+                Runnable rn = new Runnable () { public void run() { tryInit () ; } };
+                com.lispworks.Manager.init(this, rn);
+                break ;
+        }
+
     }
 }
