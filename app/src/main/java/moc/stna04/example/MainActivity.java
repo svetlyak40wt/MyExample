@@ -16,6 +16,8 @@ import android.view.MenuItem;
 import android.webkit.WebView;
 import android.widget.TextView;
 
+import java.util.concurrent.TimeUnit;
+
 public class MainActivity extends AppCompatActivity {
     Integer initialized = -1;
 
@@ -36,21 +38,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         tryInit();
-
-        if (initialized == 0) {
-            String msg = (
-                    "Failed to initialize LispWorks("
-                            + com.lispworks.Manager.init_result_code() + ") : "
-                            + com.lispworks.Manager.mInitErrorString
-            );
-            Log.d("app", msg);
-            TextView errorText = (TextView) findViewById(R.id.error_text);
-            errorText.setText(msg);
-        } else {
-            Object url = com.lispworks.LispCalls.callObjectV("GET-URL-TO-DISPLAY");
-            WebView myWebView = (WebView) findViewById(R.id.web_view);
-            myWebView.loadUrl((String) url);
-        }
     }
 
     @Override
@@ -78,8 +65,8 @@ public class MainActivity extends AppCompatActivity {
     private void tryInit (){
         int lwStatus = com.lispworks.Manager.status ()  ;
         switch (lwStatus) {
-            case com.lispworks.Manager.STATUS_READY : initialized = 1; break;
-            case com.lispworks.Manager.STATUS_ERROR : initialized = 0; break ;
+            case com.lispworks.Manager.STATUS_READY : lispInitialized(); break;
+            case com.lispworks.Manager.STATUS_ERROR : lispNotInitialized(); break ;
             case com.lispworks.Manager.STATUS_INITIALIZING :
             case  com.lispworks.Manager.STATUS_NOT_INITIALIZED :
                 // Initialize with a runnable that will get called when LispWorks
@@ -89,6 +76,24 @@ public class MainActivity extends AppCompatActivity {
                 com.lispworks.Manager.init(this, rn);
                 break ;
         }
+    }
 
+    private void lispNotInitialized() {
+        String msg = (
+                "Failed to initialize LispWorks("
+                        + com.lispworks.Manager.init_result_code() + ") : "
+                        + com.lispworks.Manager.mInitErrorString
+        );
+        Log.d("app", msg);
+        TextView errorText = (TextView) findViewById(R.id.error_text);
+        errorText.setText(msg);
+    }
+    private void lispInitialized() {
+        TextView errorText = (TextView) findViewById(R.id.error_text);
+        errorText.setText("Lisp Was Initialized");
+
+        Object url = com.lispworks.LispCalls.callObjectV("GET-URL-TO-DISPLAY");
+        WebView myWebView = (WebView) findViewById(R.id.web_view);
+        myWebView.loadUrl((String) url);
     }
 }

@@ -4,6 +4,6 @@
 (declaim (notinline get-url-to-display))
 
 (defun get-url-to-display ()
-   "https://ya.ru")
+   "https://svetlyak.ru")
 
 (deliver-keep-symbols 'get-url-to-display)
