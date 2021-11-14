@@ -150,6 +150,7 @@ software/gwkkwg-trivial-timeout-20190318184908/trivial-timeout-test.asd
 software/gwkkwg-trivial-timeout-20190318184908/trivial-timeout.asd
 software/iterate-release-b0f9a9c6-git/iterate.asd
 software/jdz-rfc2388-20190319055829/rfc2388.asd
+software/joaotavora-sly-20210731100134/slynk/slynk.asd
 software/lmj-global-vars-20190319075150/global-vars-test.asd
 software/lmj-global-vars-20190319075150/global-vars.asd
 software/m2ym-cl-syntax-20190319100142/cl-syntax-markup.asd

@@ -1,4 +1,4 @@
-(:CREATION-TIME #A((20) BASE-CHAR . "2021-11-14T17:29:23Z") :REQUESTED-SYSTEMS
+(:CREATION-TIME #A((20) BASE-CHAR . "2021-11-14T22:01:56Z") :REQUESTED-SYSTEMS
  ("40ants-doc" #A((10) BASE-CHAR . "alexandria") #A((8) BASE-CHAR . "anaphora")
   "asdf" #A((5) BASE-CHAR . "babel") #A((16) BASE-CHAR . "bordeaux-threads")
   #A((4) BASE-CHAR . "cffi") "chipz" #A((6) BASE-CHAR . "chunga")
@@ -26,7 +26,7 @@
   "parenscript" "parse-declarations-1.0" "parse-number"
   #A((10) BASE-CHAR . "proc-parse") "puri" "pythonic-string-reader"
   #A((4) BASE-CHAR . "quri") #A((7) BASE-CHAR . "rfc2388") "routes" "salza2"
-  "serapeum" #A((12) BASE-CHAR . "smart-buffer") "spinneret"
+  "serapeum" "slynk" #A((12) BASE-CHAR . "smart-buffer") "spinneret"
   #A((14) BASE-CHAR . "split-sequence") #A((14) BASE-CHAR . "static-vectors")
   "string-case" "trivia" "trivia.balland2006" "trivia.level0" "trivia.level1"
   #A((13) BASE-CHAR . "trivia.level2") "trivia.quasiquote"
