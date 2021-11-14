@@ -35,7 +35,9 @@
 
 (defun make-bundle ()
   (ql:bundle-systems
-   (get-all-deps '(:ningle :clack :clack-handler-toot))
+   (get-all-deps '(:ningle :clack
+                   :clack-handler-toot
+                   :clack-handler-hunchentoot))
    
    ;; '(ningle
 

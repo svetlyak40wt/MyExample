@@ -47,6 +47,7 @@ software/fast-io-20200925-git/fast-io.asd
 software/flexi-streams-20210807-git/flexi-streams.asd
 software/http-body-20190813-git/http-body-test.asd
 software/http-body-20190813-git/http-body.asd
+software/hunchentoot-v1.3.0/hunchentoot.asd
 software/ironclad-v0.55/ironclad-text.asd
 software/ironclad-v0.55/ironclad.asd
 software/jonathan-20200925-git/jonathan-test.asd
@@ -94,6 +95,7 @@ software/proc-parse-20190813-git/proc-parse.asd
 software/puri-20201016-git/puri.asd
 software/quri-20210630-git/quri-test.asd
 software/quri-20210630-git/quri.asd
+software/rfc2388-20180831-git/rfc2388.asd
 software/smart-buffer-20210630-git/smart-buffer-test.asd
 software/smart-buffer-20210630-git/smart-buffer.asd
 software/split-sequence-v2.0.1/split-sequence.asd
