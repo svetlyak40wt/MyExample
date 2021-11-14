@@ -1,6 +1,15 @@
 software/40ants-doc-20211027081112/40ants-doc-test.asd
 software/40ants-doc-20211027081112/40ants-doc-full.asd
 software/40ants-doc-20211027081112/40ants-doc.asd
+software/40ants-log4cl-extras-20211108222454/log4cl-extras-test.asd
+software/40ants-log4cl-extras-20211108222454/log4cl-extras.asd
+software/40ants-weblocks-20210112221013/weblocks-test.asd
+software/40ants-weblocks-20210112221013/weblocks-scripts.asd
+software/40ants-weblocks-20210112221013/weblocks.asd
+software/40ants-weblocks-parenscript-20210103163532/weblocks-parenscript-test.asd
+software/40ants-weblocks-parenscript-20210103163532/weblocks-parenscript.asd
+software/40ants-weblocks-ui-20210618182430/weblocks-ui-test.asd
+software/40ants-weblocks-ui-20210618182430/weblocks-ui.asd
 software/Bike-introspect-environment-20210809203803/introspect-environment-test.asd
 software/Bike-introspect-environment-20210809203803/introspect-environment.asd
 software/Hexstream-with-output-to-stream-20201112202505/tests/with-output-to-stream_tests.asd

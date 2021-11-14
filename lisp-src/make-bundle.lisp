@@ -3,14 +3,17 @@
 
 (defun expand-dependencies (system-name)
   (remove nil
-          (list* (etypecase system-name
-                   (list (ecase (first system-name)
-                           (:version (second system-name))
-                           ;; just skip featured deps for now
-                           ;; most cases are special dependencies for :sbcl
-                           (:feature nil)))
-                   (symbol (string-downcase (symbol-name system-name)))
-                   (string system-name))
+          (list* (let ((system-name
+                         (etypecase system-name
+                           (list (ecase (first system-name)
+                                   (:version (second system-name))
+                                   ;; just skip featured deps for now
+                                   ;; most cases are special dependencies for :sbcl
+                                   (:feature nil)))
+                           (symbol (string-downcase (symbol-name system-name)))
+                           (string system-name))))
+                   (when system-name
+                     (asdf:primary-system-name system-name)))
                  (typecase system-name
                    ((or string symbol)
                     (let ((system (asdf/system:find-system system-name)))
@@ -19,11 +22,10 @@
 
 
 (defun is-good (dep)
-  (unless (or (find #\/ dep)
-              (and (> (length dep)
-                      3)
-                   (string-equal (subseq dep 0 3)
-                                 "sb-")))
+  (unless (and (> (length dep)
+                  3)
+               (string-equal (subseq dep 0 3)
+                             "sb-"))
     t))
 
 
