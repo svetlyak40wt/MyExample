@@ -104,6 +104,10 @@
         (interface "localhost"))
     (weblocks/server:start :port port
                            :interface interface)
+    
+    (while (not (find-port:port-open-p port :interface interface))
+      (sleep 0.1))
+    
     (format nil "http://~A:~A/"
             interface
             port)))
