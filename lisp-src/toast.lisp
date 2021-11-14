@@ -51,7 +51,10 @@
 
 (defun get-gravity-value (gravity-name)
   (let ((full-name (string-append "android.view.Gravity." (string-upcase (string gravity-name)))))
-    (or (lw-ji:checked-read-java-field full-name) 0)))
+    (or
+     #+lispworks
+     (lw-ji:checked-read-java-field full-name)
+     0)))
 
 ;;; Allow gravity to be an integer, or a string designator, or a list
 ;;; of gravity values.
@@ -73,19 +76,21 @@
     (:long 1)
     (t "Unknown DURATION (not :SHORT or :LONG): ~s" duration)))
 
-;;; The Java callers we use. 
+;;; The Java callers we use.
+#+lispworks
 (lw-ji:define-java-callers "android.widget.Toast"
-  (make-toast "makeText") ; Context, string or resid, duration (0 - short, 1 - long ) 
-  (toast-set-margin "setMargin")  ; float (horizontal), float (vertical)
-  (toast-set-gravity  "setGravity") ; int (gravity), int (x), int (y)
+    (make-toast "makeText")             ; Context, string or resid, duration (0 - short, 1 - long ) 
+  (toast-set-margin "setMargin")        ; float (horizontal), float (vertical)
+  (toast-set-gravity  "setGravity")     ; int (gravity), int (x), int (y)
   (toast-show "show")
- )
+  )
 
 
 ;;; This is called on the main thread to actually do the work. 
 ;;; First get the application context, and then use the Java callers defined
 ;;; above to make the toast and show it. 
 (defun internal-raise-a-toast (string duration-int gravity x-offset y-offset h-margin v-margin)
+  #+lispworks
   (let ((context (hcl::android-get-application-context)))
     (let ((toast (make-toast context
                              string
@@ -101,6 +106,9 @@
   (assert (integerp y-offset) nil "RAISE-A-TOAST: Y-OFFSET is not an integer : ~s" y-offset)
   (assert (floatp h-margin)  nil  "RAISE-A-TOAST: H-MARGIN is not a float : ~s" h-margin)
   (assert  (floatp v-margin) nil  "RAISE-A-TOAST: v-MARGIN is not a float : ~s" v-margin)
+  #-lispworks
+  (format *error-output* "Toasts aren't supported on non LispWorks lisps.")
+  #+lispworks
   (let ((duration-int (interpret-duration duration))
         (gravity (interpret-gravity gravity)))
     (hcl:android-funcall-in-main-thread 'internal-raise-a-toast 
