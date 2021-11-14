@@ -1,0 +1,18 @@
+diff --git a/lisp-src/bundle/software/hunchentoot-v1.3.0/lispworks.lisp b/lisp-src/bundle/software/hunchentoot-v1.3.0/lispworks.lisp
+index fb4d3c6..20abd07 100644
+--- a/lisp-src/bundle/software/hunchentoot-v1.3.0/lispworks.lisp
++++ b/lisp-src/bundle/software/hunchentoot-v1.3.0/lispworks.lisp
+@@ -124,10 +124,13 @@ used to set the timeouts."
+ (dspec:define-dspec-alias def-http-return-code (name)
+   `(defconstant ,name))
+ 
++#+lw-editor
+ (editor:setup-indent "defvar-unbound" 1 2 4)
+ 
++#+lw-editor
+ (editor:setup-indent "def-http-return-code" 1 2 4)
+ 
++#+lw-editor
+ (editor:setup-indent "handler-case*" 1 2 4)
+ 
+ (defun make-condition-variable (&key name)
