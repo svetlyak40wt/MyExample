@@ -1,5 +1,6 @@
 (defpackage todo
   (:use #:cl)
+  (:import-from #:slynk)
   (:import-from #:clack.handler.hunchentoot)
   (:import-from #:weblocks/widget
                 #:render
@@ -102,13 +103,33 @@
    (format nil "Task \"~A\" was added")))
 
 
+(defvar slynk:*use-dedicated-output-stream*)
+
 (defun start-server ()
   (let ((port (find-port:find-port))
-        (interface "localhost"))
+        (interface "localhost")
+        (slynk-port 10405)
+        (slynk-interface "localhost"))
     (weblocks/server:start :port port
                            :interface interface)
+
+    ;; To make it possible to connect to a remote SLYNK server where ports are closed
+    ;; with firewall.
+    (setf slynk:*use-dedicated-output-stream* nil)
+    
+    (format t "Starting slynk server on ~A:~A (dedicated-output: ~A)~%"
+            slynk-interface
+            slynk-port
+            slynk:*use-dedicated-output-stream*)
+    
+    (slynk:create-server :dont-close t
+                         :port slynk-port
+                         :interface slynk-interface)
     
     (while (not (find-port:port-open-p port :interface interface))
+      (sleep 0.1))
+    
+    (while (not (find-port:port-open-p slynk-port :interface slynk-interface))
       (sleep 0.1))
     
     (format nil "http://~A:~A/"
