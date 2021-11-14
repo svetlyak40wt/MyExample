@@ -1,0 +1,9 @@
+Project's home: https://www.hexstreamsoft.com/libraries/with-output-to-stream/
+
+
+with-output-to-stream provides a simple way of directing output to a stream
+according to the concise and intuitive semantics of FORMAT's stream argument.
+
+
+This library is in the Public Domain.
+See the UNLICENSE file for details.

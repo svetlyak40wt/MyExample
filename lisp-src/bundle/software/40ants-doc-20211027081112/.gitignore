@@ -1,0 +1,11 @@
+*~
+*.fasl
+*.*fsl
+test/data/tmp/
+world/
+doc/
+docs/
+new-docs/
+.qlot/
+/coverage/
+.DS_Store
