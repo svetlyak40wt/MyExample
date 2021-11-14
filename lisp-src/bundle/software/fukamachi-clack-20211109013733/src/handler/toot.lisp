@@ -80,7 +80,8 @@ before pass to Clack application."
       (list
        :request-method (request-method req)
        :script-name ""
-       :path-info (let ((flex:*substitution-char* #-abcl #\Replacement_Character
+       :path-info (let ((flex:*substitution-char* #-(or abcl lispworks) #\Replacement_Character
+                                                  #+lispworks #\?
                                                   #+abcl #\?))
                     (url-decode (request-path req)))
        :server-name server-name

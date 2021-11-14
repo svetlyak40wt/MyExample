@@ -1,7 +1,7 @@
 diff --git a/lisp-src/bundle/software/hunchentoot-v1.3.0/lispworks.lisp b/lisp-src/bundle/software/hunchentoot-v1.3.0/lispworks.lisp
 index fb4d3c6..20abd07 100644
---- a/lisp-src/bundle/software/hunchentoot-v1.3.0/lispworks.lisp
-+++ b/lisp-src/bundle/software/hunchentoot-v1.3.0/lispworks.lisp
+--- a/lisp-src/bundle/software/edicl-hunchentoot-20211109024657/lispworks.lisp
++++ b/lisp-src/bundle/software/edicl-hunchentoot-20211109024657/lispworks.lisp
 @@ -124,10 +124,13 @@ used to set the timeouts."
  (dspec:define-dspec-alias def-http-return-code (name)
    `(defconstant ,name))
