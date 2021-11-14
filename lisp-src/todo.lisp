@@ -15,6 +15,7 @@
                 #:with-html)
   (:import-from #:weblocks-ui/form
                 #:with-html-form)
+  (:import-from #:todo/toast)
   (:export #:start-server))
 (in-package todo)
 
@@ -96,7 +97,9 @@
 (defun add-task (task-list title)
   (push (make-task title)
         (tasks task-list))
-  (update task-list))
+  (update task-list)
+  (todo/toast:raise-a-toast
+   (format nil "Task \"~A\" was added")))
 
 
 (defun start-server ()
