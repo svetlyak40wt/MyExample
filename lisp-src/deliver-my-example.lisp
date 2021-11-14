@@ -1,6 +1,7 @@
 (load "lisp-src/bundle/bundle.lisp")
-(asdf:load-system :ningle)
 
+(asdf:load-system :ningle)
+(asdf:load-system :clack)
 (asdf:load-system :clack-handler-toot)
 
 
