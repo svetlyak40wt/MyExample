@@ -23,14 +23,22 @@
     (list (make-dependency "https://code.jquery.com/jquery-1.8.2.js"
                            ;; :integrity "sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
                            )
-          (make-dependency "src/js/jquery/jquery.js"
-                           :system :weblocks)
+          ;; (make-dependency "src/js/jquery/jquery-1.8.2.js"
+          ;;                  :system :weblocks)
+          (make-dependency "https://ultralisp.org/static/js/jquery.js"
+            ;; "src/js/jquery/jquery.js"
+            ;; :system :weblocks
+            )
 
-          (make-dependency "src/js/jquery/jquery.ba-bbq.js"
-                           :system :weblocks)
+          (make-dependency "https://ultralisp.org/static/js/jquery.ba-bbq.js"
+            ;; "src/js/jquery/jquery.ba-bbq.js"
+            ;; :system :weblocks
+            )
 
-          (make-dependency "src/js/jquery/jquery-seq.js"
-                           :system :weblocks)
+          (make-dependency "https://ultralisp.org/static/js/jquery-seq.js"
+            ;; "src/js/jquery/jquery-seq.js"
+            ;; :system :weblocks
+            )
 
           (make-dependency "src/js/jquery/progress.gif"
                            :system :weblocks)))
