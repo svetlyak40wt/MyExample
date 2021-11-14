@@ -90,10 +90,12 @@ public class MainActivity extends AppCompatActivity {
     }
     private void lispInitialized() {
         TextView errorText = (TextView) findViewById(R.id.error_text);
-        errorText.setText("Lisp Was Initialized");
+        // errorText.setText("Lisp Was Initialized");
 
         Object url = com.lispworks.LispCalls.callObjectV("GET-URL-TO-DISPLAY");
         WebView myWebView = (WebView) findViewById(R.id.web_view);
+        myWebView.getSettings().setJavaScriptEnabled(true);
+        myWebView.setWebContentsDebuggingEnabled(true);
         myWebView.loadUrl((String) url);
     }
 }
