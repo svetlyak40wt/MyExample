@@ -40,12 +40,10 @@
 
 
 (defun make-bundle ()
-  (let ((deps '(:ningle
-                :clack
-                :clack-handler-toot
-                :clack-handler-hunchentoot
-                :weblocks)))
+  (let ((deps '("todo")))
     (ql:quickload deps)
     (ql:bundle-systems
-     (get-all-deps deps)
+     (remove-if (lambda (item)
+                  (member item deps :test #'string-equal))
+                (get-all-deps deps))
      :to "bundle/")))

@@ -1,11 +1,6 @@
 software/40ants-doc-20211027081112/40ants-doc-test.asd
 software/40ants-doc-20211027081112/40ants-doc-full.asd
 software/40ants-doc-20211027081112/40ants-doc.asd
-software/40ants-log4cl-extras-20211108222454/log4cl-extras-test.asd
-software/40ants-log4cl-extras-20211108222454/log4cl-extras.asd
-software/40ants-weblocks-20210112221013/weblocks-test.asd
-software/40ants-weblocks-20210112221013/weblocks-scripts.asd
-software/40ants-weblocks-20210112221013/weblocks.asd
 software/Bike-introspect-environment-20210809203803/introspect-environment-test.asd
 software/Bike-introspect-environment-20210809203803/introspect-environment.asd
 software/Hexstream-with-output-to-stream-20201112202505/tests/with-output-to-stream_tests.asd
@@ -48,6 +43,8 @@ software/edicl-cl-ppcre-20190618135807/cl-ppcre-unicode.asd
 software/edicl-cl-ppcre-20190618135807/cl-ppcre.asd
 software/edicl-flexi-streams-20210802200136/flexi-streams.asd
 software/edicl-hunchentoot-20211109024657/hunchentoot.asd
+software/eudoxia0-find-port-20190606084950/find-port-test.asd
+software/eudoxia0-find-port-20190606084950/find-port.asd
 software/f-underscore-20101006-darcs/f-underscore.asd
 software/fare-quasiquote-20200925-git/fare-quasiquote-extras.asd
 software/fare-quasiquote-20200925-git/fare-quasiquote-optima.asd
@@ -108,10 +105,6 @@ software/fukamachi-lack-20211024024611/lack-component.asd
 software/fukamachi-lack-20211024024611/lack-app-file.asd
 software/fukamachi-lack-20211024024611/lack-app-directory.asd
 software/fukamachi-lack-20211024024611/lack.asd
-software/fukamachi-myway-20200324202453/myway-test.asd
-software/fukamachi-myway-20200324202453/myway.asd
-software/fukamachi-ningle-20190826024633/ningle-test.asd
-software/fukamachi-ningle-20190826024633/ningle.asd
 software/fukamachi-proc-parse-20190812064611/proc-parse-test.asd
 software/fukamachi-proc-parse-20190812064611/proc-parse.asd
 software/fukamachi-quri-20210617074624/quri-test.asd
@@ -120,7 +113,6 @@ software/fukamachi-smart-buffer-20211021020118/smart-buffer-test.asd
 software/fukamachi-smart-buffer-20211021020118/smart-buffer.asd
 software/fukamachi-xsubseq-20210914221526/xsubseq-test.asd
 software/fukamachi-xsubseq-20210914221526/xsubseq.asd
-software/gigamonkey-toot-20190319051048/toot.asd
 software/guicho271828-lisp-namespace-20210914221148/lisp-namespace.test.asd
 software/guicho271828-lisp-namespace-20210914221148/lisp-namespace.asd
 software/guicho271828-trivia-20210922133132/trivia.trivial.asd
@@ -159,7 +151,6 @@ software/m2ym-cl-syntax-20190319100142/cl-syntax-anonfun.asd
 software/m2ym-cl-syntax-20190319100142/cl-syntax-annot.asd
 software/m2ym-cl-syntax-20190319100142/cl-syntax.asd
 software/m2ym-trivial-types-20190318184855/trivial-types.asd
-software/map-set-20190307-hg/map-set.asd
 software/melisgl-named-readtables-20211022171627/named-readtables.asd
 software/metacopy-20170403-darcs/metacopy-with-contextl.asd
 software/metacopy-20170403-darcs/metacopy.asd
