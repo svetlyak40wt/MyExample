@@ -13,7 +13,11 @@
 
 
 (defun is-good (dep)
-  (unless (find #\/ dep)
+  (unless (or (find #\/ dep)
+              (and (> (length dep)
+                      3)
+                   (string-equal (subseq dep 0 3)
+                                 "sb-")))
     t))
 
 
