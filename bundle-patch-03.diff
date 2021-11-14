@@ -1,0 +1,40 @@
+diff --git a/lisp-src/bundle/software/40ants-log4cl-extras-20211108222454/src/error.lisp b/lisp-src/bundle/software/40ants-log4cl-extras-20211108222454/src/error.lisp
+index f5b681f..c909e0d 100644
+--- a/lisp-src/bundle/software/40ants-log4cl-extras-20211108222454/src/error.lisp
++++ b/lisp-src/bundle/software/40ants-log4cl-extras-20211108222454/src/error.lisp
+@@ -78,9 +78,9 @@ CL-USER> (log4cl-extras/error:with-log-unhandled ()
+       (FOO)
+     File "NIL", line NIL, in BAR
+       (BAR)
+-    File "NIL", line NIL, in (LAMBDA (…
++    File "NIL", line NIL, in (LAMBDA (...
+       ((LAMBDA ()))
+-    File "NIL", line NIL, in SIMPLE-EV…
++    File "NIL", line NIL, in SIMPLE-EV...
+       (SB-INT:SIMPLE-EVAL-IN-LEXENV
+        (LOG4CL-EXTRAS/ERROR:WITH-LOG-UNHANDLED NIL
+          (BAR))
+diff --git a/lisp-src/bundle/software/moptilities-20170403-git/dev/moptilities.lisp b/lisp-src/bundle/software/moptilities-20170403-git/dev/moptilities.lisp
+index 972a215..e534038 100644
+--- a/lisp-src/bundle/software/moptilities-20170403-git/dev/moptilities.lisp
++++ b/lisp-src/bundle/software/moptilities-20170403-git/dev/moptilities.lisp
+@@ -503,7 +503,8 @@ description.  Otherwise signal an error if errorp is t."
+     #+(or DIGITOOL OPENMCL)
+     (ccl::class-slot-initargs class)
+     #+lispworks
+-    (lw-tools::class-initargs class)
++    nil
++    ;; (lw-tools::class-initargs class)
+     #+allegro
+     nil
+     #-(or DIGITOOL OPENMCL LISPWORKS4 allegro)
+@@ -627,7 +628,8 @@ description.  Otherwise signal an error if errorp is t."
+   #+(or DIGITOOL OPENMCL)
+   (ccl::class-slot-initargs class)
+   #+lispworks
+-  (lw-tools::class-initargs class)
++  nil
++  ;; (lw-tools::class-initargs class)
+   #-(or DIGITOOL OPENMCL LISPWORKS4)
+   (nyi "mopu-class-initargs"))
+ 

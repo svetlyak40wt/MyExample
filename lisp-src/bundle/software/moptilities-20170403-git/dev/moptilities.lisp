@@ -503,7 +503,8 @@ description.  Otherwise signal an error if errorp is t."
     #+(or DIGITOOL OPENMCL)
     (ccl::class-slot-initargs class)
     #+lispworks
-    (lw-tools::class-initargs class)
+    nil
+    ;; (lw-tools::class-initargs class)
     #+allegro
     nil
     #-(or DIGITOOL OPENMCL LISPWORKS4 allegro)
@@ -627,7 +628,8 @@ description.  Otherwise signal an error if errorp is t."
   #+(or DIGITOOL OPENMCL)
   (ccl::class-slot-initargs class)
   #+lispworks
-  (lw-tools::class-initargs class)
+  nil
+  ;; (lw-tools::class-initargs class)
   #-(or DIGITOOL OPENMCL LISPWORKS4)
   (nyi "mopu-class-initargs"))
 
