@@ -2,6 +2,7 @@
 
 (asdf:load-system :ningle)
 (asdf:load-system :clack)
+(asdf:load-system :spinneret)
 (asdf:load-system :clack-handler-hunchentoot)
 
 

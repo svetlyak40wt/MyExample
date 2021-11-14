@@ -34,7 +34,6 @@
                           (return-from get-url-to-display
                             (format nil "Traceback: ~A" c))) ))
     (start-server)
-    (sleep 10)
     (values "http://127.0.0.1:10080/")
     ;; (values "https://svetlyak.ru/")
     ))
