@@ -46,7 +46,7 @@ output.")
                :cl-fad
                :cl-ppcre
                :flexi-streams
-               :cl+ssl
+               ;; :cl+ssl
                :md5
                :trivial-backtrace
                :usocket
