@@ -1,4 +1,4 @@
-;; Copyright (c) 2004-2010, Dr. Edmund Weitz.  All rights reserved.
+;;; Copyright (c) 2004-2010, Dr. Edmund Weitz.  All rights reserved.
 
 ;;; Redistribution and use in source and binary forms, with or without
 ;;; modification, are permitted provided that the following conditions
@@ -46,7 +46,7 @@ output.")
                :cl-fad
                :cl-ppcre
                :flexi-streams
-               ;; :cl+ssl
+               :cl+ssl
                :md5
                :trivial-backtrace
                :usocket

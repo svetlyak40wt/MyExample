@@ -333,14 +333,12 @@ different thread than accept-connection is running in."
 
 (defun setup-ssl-stream (acceptor stream)
   ;; attach SSL to the stream if necessary
-  (error "SSL support was removed from Toot")
-;;  (with-slots (ssl-certificate-file ssl-private-key-file ssl-private-key-password) acceptor
-;;    (cl+ssl:make-ssl-server-stream
-;;     stream
-;;     :certificate ssl-certificate-file
-;;     :key ssl-private-key-file
-;;     :password ssl-private-key-password))
-)
+  (with-slots (ssl-certificate-file ssl-private-key-file ssl-private-key-password) acceptor
+    (cl+ssl:make-ssl-server-stream
+     stream
+     :certificate ssl-certificate-file
+     :key ssl-private-key-file
+     :password ssl-private-key-password)))
 
 (defun finish-response-body (request)
   (with-slots (content-stream) request
