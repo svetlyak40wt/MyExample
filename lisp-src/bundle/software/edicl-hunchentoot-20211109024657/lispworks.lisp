@@ -124,10 +124,13 @@ used to set the timeouts."
 (dspec:define-dspec-alias def-http-return-code (name)
   `(defconstant ,name))
 
+#+lw-editor
 (editor:setup-indent "defvar-unbound" 1 2 4)
 
+#+lw-editor
 (editor:setup-indent "def-http-return-code" 1 2 4)
 
+#+lw-editor
 (editor:setup-indent "handler-case*" 1 2 4)
 
 (defun make-condition-variable (&key name)
