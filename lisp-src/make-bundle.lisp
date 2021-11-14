@@ -2,14 +2,20 @@
 
 
 (defun expand-dependencies (system-name)
-  (list* (etypecase system-name
-           (symbol (string-downcase (symbol-name system-name)))
-           (string system-name))
-         (typecase system-name
-           ((or string symbol)
-            (let ((system (asdf/system:find-system system-name)))
-              (loop for dep in (asdf/system:system-depends-on system)
-                    appending (expand-dependencies dep)))))))
+  (remove nil
+          (list* (etypecase system-name
+                   (list (ecase (first system-name)
+                           (:version (second system-name))
+                           ;; just skip featured deps for now
+                           ;; most cases are special dependencies for :sbcl
+                           (:feature nil)))
+                   (symbol (string-downcase (symbol-name system-name)))
+                   (string system-name))
+                 (typecase system-name
+                   ((or string symbol)
+                    (let ((system (asdf/system:find-system system-name)))
+                      (loop for dep in (asdf/system:system-depends-on system)
+                            appending (expand-dependencies dep))))))))
 
 
 (defun is-good (dep)
@@ -35,7 +41,9 @@
 
 (defun make-bundle ()
   (ql:bundle-systems
-   (get-all-deps '(:ningle :clack
+   (get-all-deps '(:ningle
+                   :clack
                    :clack-handler-toot
-                   :clack-handler-hunchentoot))
+                   :clack-handler-hunchentoot
+                   :spinneret))
    :to "bundle/"))
