@@ -1,6 +1,9 @@
 (defpackage todo
   (:use #:cl)
   (:import-from #:slynk)
+  (:import-from #:slynk/mrepl)
+  (:import-from #:slynk/arglists)
+  
   (:import-from #:clack.handler.hunchentoot)
   (:import-from #:weblocks/widget
                 #:render
@@ -100,7 +103,8 @@
         (tasks task-list))
   (update task-list)
   (todo/toast:raise-a-toast
-   (format nil "Task \"~A\" was added")))
+   (format nil "Task \"~A\" was added"
+           title)))
 
 
 (defvar slynk:*use-dedicated-output-stream*)
@@ -125,12 +129,13 @@
     (slynk:create-server :dont-close t
                          :port slynk-port
                          :interface slynk-interface)
+
+    (sleep 5)
+    ;; This does not work for some reason.
+    ;; Have to figure out why:
+    ;; (loop while (not (find-port:port-open-p port :interface interface))
+    ;;       do (sleep 0.1))
     
-    (while (not (find-port:port-open-p port :interface interface))
-      (sleep 0.1))
-    
-    (while (not (find-port:port-open-p slynk-port :interface slynk-interface))
-      (sleep 0.1))
     
     (format nil "http://~A:~A/"
             interface
