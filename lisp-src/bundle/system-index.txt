@@ -1,8 +1,8 @@
 software/40ants-doc-20211027081112/40ants-doc-test.asd
 software/40ants-doc-20211027081112/40ants-doc-full.asd
 software/40ants-doc-20211027081112/40ants-doc.asd
-software/40ants-log4cl-extras-20211108222454/log4cl-extras-test.asd
-software/40ants-log4cl-extras-20211108222454/log4cl-extras.asd
+software/40ants-log4cl-extras-20211115102113/log4cl-extras-test.asd
+software/40ants-log4cl-extras-20211115102113/log4cl-extras.asd
 software/40ants-weblocks-20210112221013/weblocks-test.asd
 software/40ants-weblocks-20210112221013/weblocks-scripts.asd
 software/40ants-weblocks-20210112221013/weblocks.asd
@@ -150,7 +150,7 @@ software/gwkkwg-trivial-timeout-20190318184908/trivial-timeout-test.asd
 software/gwkkwg-trivial-timeout-20190318184908/trivial-timeout.asd
 software/iterate-release-b0f9a9c6-git/iterate.asd
 software/jdz-rfc2388-20190319055829/rfc2388.asd
-software/joaotavora-sly-20210731100134/slynk/slynk.asd
+software/joaotavora-sly-20211116022016/slynk/slynk.asd
 software/lmj-global-vars-20190319075150/global-vars-test.asd
 software/lmj-global-vars-20190319075150/global-vars.asd
 software/m2ym-cl-syntax-20190319100142/cl-syntax-markup.asd
@@ -175,12 +175,12 @@ software/pmai-md5-20210627082253/md5.asd
 software/puri-20201016-git/puri.asd
 software/rpav-fast-io-20200905185719/fast-io-test.asd
 software/rpav-fast-io-20200905185719/fast-io.asd
-software/ruricolist-serapeum-20211111220710/serapeum.asd
+software/ruricolist-serapeum-20211115223901/serapeum.asd
 software/ruricolist-spinneret-20210930191620/spinneret.asd
 software/ruricolist-trivial-file-size-20210305071352/trivial-file-size.asd
 software/salza2-2.0.9/salza2.asd
-software/sharplispers-ironclad-20210916110131/ironclad-text.asd
-software/sharplispers-ironclad-20210916110131/ironclad.asd
+software/sharplispers-ironclad-20211116005304/ironclad-text.asd
+software/sharplispers-ironclad-20211116005304/ironclad.asd
 software/sharplispers-log4cl-20211021221636/log4cl.log4sly.asd
 software/sharplispers-log4cl-20211021221636/log4cl.log4slime.asd
 software/sharplispers-log4cl-20211021221636/log4cl-examples.asd

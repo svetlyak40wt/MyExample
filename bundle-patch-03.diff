@@ -1,7 +1,7 @@
 diff --git a/lisp-src/bundle/software/40ants-log4cl-extras-20211108222454/src/error.lisp b/lisp-src/bundle/software/40ants-log4cl-extras-20211108222454/src/error.lisp
 index f5b681f..c909e0d 100644
---- a/lisp-src/bundle/software/40ants-log4cl-extras-20211108222454/src/error.lisp
-+++ b/lisp-src/bundle/software/40ants-log4cl-extras-20211108222454/src/error.lisp
+--- a/lisp-src/bundle/software/40ants-log4cl-extras-20211115102113/src/error.lisp
++++ b/lisp-src/bundle/software/40ants-log4cl-extras-20211115102113/src/error.lisp
 @@ -78,9 +78,9 @@ CL-USER> (log4cl-extras/error:with-log-unhandled ()
        (FOO)
      File "NIL", line NIL, in BAR

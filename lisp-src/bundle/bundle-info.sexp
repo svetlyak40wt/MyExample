@@ -1,4 +1,4 @@
-(:CREATION-TIME #A((20) BASE-CHAR . "2021-11-14T22:01:56Z") :REQUESTED-SYSTEMS
+(:CREATION-TIME #A((20) BASE-CHAR . "2021-11-20T10:05:31Z") :REQUESTED-SYSTEMS
  ("40ants-doc" #A((10) BASE-CHAR . "alexandria") #A((8) BASE-CHAR . "anaphora")
   "asdf" #A((5) BASE-CHAR . "babel") #A((16) BASE-CHAR . "bordeaux-threads")
   #A((4) BASE-CHAR . "cffi") "chipz" #A((6) BASE-CHAR . "chunga")
@@ -12,7 +12,7 @@
   "f-underscore" "fare-quasiquote" "fare-quasiquote-extras"
   "fare-quasiquote-optima" "fare-quasiquote-readtable" "fare-utils"
   #A((9) BASE-CHAR . "fast-http") #A((7) BASE-CHAR . "fast-io") "find-port"
-  #A((13) BASE-CHAR . "flexi-streams") "global-vars"
+  #A((13) BASE-CHAR . "flexi-streams") #A((11) BASE-CHAR . "global-vars")
   #A((9) BASE-CHAR . "http-body") #A((11) BASE-CHAR . "hunchentoot")
   #A((22) BASE-CHAR . "introspect-environment") #A((8) BASE-CHAR . "ironclad")
   #A((7) BASE-CHAR . "iterate") #A((8) BASE-CHAR . "jonathan") "lack"
@@ -41,10 +41,9 @@
   "with-output-to-stream" #A((7) BASE-CHAR . "xsubseq"))
  :LISP-INFO
  (:MACHINE-INSTANCE "art-osx" :MACHINE-TYPE #A((6) BASE-CHAR . "X86-64")
-  :MACHINE-VERSION
-  #A((41) BASE-CHAR . "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz")
-  :LISP-IMPLEMENTATION-TYPE #A((4) BASE-CHAR . "SBCL")
-  :LISP-IMPLEMENTATION-VERSION #A((5) BASE-CHAR . "2.1.4"))
+  :MACHINE-VERSION #A((8) BASE-CHAR . "Apple M1") :LISP-IMPLEMENTATION-TYPE
+  #A((4) BASE-CHAR . "SBCL") :LISP-IMPLEMENTATION-VERSION
+  #A((5) BASE-CHAR . "2.1.9"))
  :QUICKLISP-INFO
  (:HOME #A((35) BASE-CHAR . "/Users/art/.roswell/lisp/quicklisp/")
   :LOCAL-PROJECT-DIRECTORIES
@@ -54,5 +53,5 @@
     "http://beta.quicklisp.org/dist/quicklisp/2021-08-07/distinfo.txt" :VERSION
     "2021-08-07")
    (:NAME "ultralisp" :DIST-URL
-    "http://dist.ultralisp.org/ultralisp/20211114113500/distinfo.txt" :VERSION
-    "20211114113500"))))
+    "http://dist.ultralisp.org/ultralisp/20211119143500/distinfo.txt" :VERSION
+    "20211119143500"))))

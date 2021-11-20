@@ -1,8 +1,6 @@
 (defpackage todo
   (:use #:cl)
   (:import-from #:slynk)
-  (:import-from #:slynk/mrepl)
-  (:import-from #:slynk/arglists)
   
   (:import-from #:clack.handler.hunchentoot)
   (:import-from #:weblocks/widget

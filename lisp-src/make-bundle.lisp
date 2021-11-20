@@ -43,9 +43,11 @@
 
 (defun make-bundle ()
   (let ((deps '("todo")))
+    (pushnew "./lisp-src/" asdf:*central-registry*
+             :test 'equal)
     (ql:quickload deps)
     (ql:bundle-systems
      (remove-if (lambda (item)
                   (member item deps :test #'string-equal))
                 (get-all-deps deps))
-     :to "bundle/")))
+     :to "lisp-src/bundle/")))
